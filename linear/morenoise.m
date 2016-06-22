@@ -1,11 +1,11 @@
-function lineartest
+function morenoise
 clear all; close all;
 
 A=1;
 b=1;
 c=1;
 Q=1;
-R=2;
+R=1000;
 N=300;
 
 v=randn(N,1)*sqrtm(Q);
@@ -44,7 +44,7 @@ for k=2:N
     xlabel('No. of samples');
     legend('measured','true','estimate');
     xlim([0 N]);
-    ylim([-20 20]);
+    ylim([-50 50]);
 
     subplot(4,1,2);
     plot(1:k,x(1:k)-xhat(1:k),'b-');
